@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SelFlow Monitor</title>
+    <meta name="theme-color" content="#ec3f8c" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <section class="auth-screen" id="authScreen">
+      <div class="auth-card">
+        <div class="auth-brand">
+          <span class="brand-mark">S</span>
+          <div>
+            <strong>SelFlow Monitor</strong>
+            <small>Система мониторинга селевых потоков</small>
+          </div>
+        </div>
+        <div class="auth-switch" role="tablist" aria-label="Выбор режима входа">
+          <button class="active" type="button" data-auth-mode="login">Войти</button>
+          <button type="button" data-auth-mode="register">Регистрация</button>
+        </div>
+        <h1 id="authTitle">Авторизация</h1>
+        <p id="authText">Войдите в рабочую панель оператора или зарегистрируйте нового пользователя.</p>
+        <form id="authForm" class="auth-form">
+          <div class="auth-message is-hidden" id="authMessage"></div>
+          <label class="register-only is-hidden">
+            <span>ФИО</span>
+            <input name="fullName" type="text" value="Оператор мониторинга" autocomplete="name" />
+          </label>
+          <label>
+            <span>Логин</span>
+            <input name="login" type="text" value="operator" autocomplete="username" />
+          </label>
+          <label>
+            <span>Пароль</span>
+            <input name="password" type="password" value="1234" autocomplete="current-password" />
+          </label>
+          <button id="authSubmit" type="submit">Войти в систему</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="page-frame is-hidden" id="appShell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">S</span>
+          <span>
+            <strong>SelFlow</strong>
+            <small>Мониторинг риска</small>
+          </span>
+        </div>
+
+        <nav class="nav" id="nav"></nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <button class="hamburger" type="button" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="topbar-title">
+            <strong>Мониторинг селевых потоков</strong>
+          </div>
+          <div class="topbar-actions">
+            <button class="account-button" id="accountButton" type="button" aria-expanded="false">
+              <span class="avatar" id="accountInitials">SM</span>
+              <span>Личный кабинет</span>
+            </button>
+            <button class="logout-button" id="logoutButton" type="button">Выйти</button>
+            <div class="profile-panel is-hidden" id="profilePanel">
+              <strong id="profileName">Оператор мониторинга</strong>
+              <span id="profileRole">Оператор</span>
+              <small id="profileLogin">operator</small>
+            </div>
+          </div>
+        </header>
+
+        <section class="content" id="app"></section>
+      </main>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

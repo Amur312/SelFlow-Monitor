@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.streamlit/secrets.toml
+data/*.db
+data/*.sqlite
+models/*.joblib
+assets/screenshots/*
+!assets/screenshots/.gitkeep
+streamlit.log
+streamlit.err.log
+node_modules/
+node-dashboard/data/
+node-dashboard/*.log
